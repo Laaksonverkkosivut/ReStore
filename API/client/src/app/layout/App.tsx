@@ -2,13 +2,6 @@ import Catalog from "../../features/catalog/Catalog";
 import Header from "./Header";
 import { Container, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { useState } from "react";
-import { Route } from "react-router-dom";
-import HomePage from "../../features/home/HomePage";
-import ProductDetails from "../../features/catalog/ProductDetails";
-import AboutPage from "../../features/about/AboutPage";
-import ContactPage from "../../features/contact/ContactPage";
-import { Routes } from "react-router";
-
 
 function App() {  
   const[darkMode, setDarkMode] = useState(false);
@@ -31,13 +24,7 @@ function handleThemeChange() {
       <CssBaseline />
       <Header darkMode={false} handleThemeChange={handleThemeChange} />
       <Container>
-        <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/catalog' element={<Catalog />} />
-        <Route path='/catalog/:id' element={<ProductDetails />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/contact' element={<ContactPage />} />
-        </Routes>
+        <Catalog />
       </Container>
     </ThemeProvider>
   );
